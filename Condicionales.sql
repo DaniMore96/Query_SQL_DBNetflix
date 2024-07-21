@@ -28,4 +28,17 @@ SELECT titulo,
         	END AS 'Antigüedad'
 		FROM Series
     		ORDER BY año_lanzamiento;
+-- EJERCICIO
+-- Escribe una consulta SQL que seleccione el titulo de todas las series y una nueva columna llamada 'Categoría de Género'
+-- Esta columna debe reflejar si el género de la serie es 'Drama' o 'Comedia', clasificándolas como 'Dramático' o 'Divertido', respectivamente.
+-- Para cualquier otro género, la clasificación debe ser 'Otro'.
+
+SELECT titulo,
+	CASE
+		WHEN genero = 'Drama' THEN 'Dramático'
+        WHEN genero = 'Comedia' THEN 'Divertido'
+        ELSE 'Otro'
+        END AS 'Categoría de Género'
+FROM Series
+ORDER BY titulo;
 
